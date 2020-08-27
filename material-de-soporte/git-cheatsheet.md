@@ -1,0 +1,10 @@
+- `git clone https://github.com/los-6-fantasticos/isw-g1.git`
+- `git pull`: para traer lo que hizo el resto
+- `git branch -D 08262020-nombre`: elimina la branch
+- `git checkout -b 08262020-nombre`: crea la branch nueva
+- `git push origin 08262020-nombre`: pushea a la branch creeada
+- `git status`: ver el estado del proyecto
+- `git add archivo`: agregar el archivo al stage(prepararlo para el commit)
+- `git commit -m "Mensaje de commit"`: arama el paquete con un mensaje
+- `git log`: veo toda la info de commits anteriores
+- `git push`: para enviar a lo marcado por defecto
