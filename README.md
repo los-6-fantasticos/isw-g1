@@ -21,8 +21,7 @@
       + tp-1
       + tp-n
   + material-de-soporte
-	 + bibliografia
-
+	+ bibliografia
 ## Listado de Items
 
 | Listado de Ítems de Configuración  Nombre del Ítem de Configuración |                    Regla de Nombrado                   |                                                              Ubicación Física                                                             | Tipo de Ítem [Práctico -Teórico] |
@@ -42,7 +41,7 @@
 |                   Protocolo para rendir finales         	          |`UTN FRC ING SW Protocolo para rendir finales en forma remota.pdf`|                          https://github.com/los-6-fantasticos/isw-g1/tree/master/material-de-soporte                              |              Teorico             |
 |                  Protocolo para rendir parciales           		  |`UTN FRC ING SW Protocolo para rendir parciales en forma remota 2C.pdf`|                          https://github.com/los-6-fantasticos/isw-g1/tree/master/material-de-soporte                         |              Teorico             |
 |						Modalidad Académica							  | 		`UTN FRC Modalidad Ing SW 2020 2doC.pdf`		 |									https://github.com/los-6-fantasticos/isw-g1/blob/master/material-de-soporte								 |              Teorico             |
-|			Diseño del repositorio y reglas de nombrado				  |						 	`README.md` 					 |											https://github.com/los-6-fantasticos/isw-g1/blob/master 										 |				Teorico 			|
+|			Diseño del repositorio y reglas de nombrado				  |						 	`README.md` 					 |													https://github.com/los-6-fantasticos/isw-g1 											 |				Teorico 			|
 
 ## Glosario
 
