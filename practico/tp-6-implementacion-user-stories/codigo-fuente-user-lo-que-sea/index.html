@@ -99,13 +99,29 @@
                         placeholder="Ingrese referencia opcional si lo desea">
                     </div>
                 </div>
-                <div id="map"></div>
 
+                <div id="map"></div>
+                <hr>
+
+                <h3 class="display-6 text-center">Cuando desea recibirlo?</h3>
+                <div class="form-group row p-2">
+                    <div class="col-sm-6">
+                        <label class="col-form-label">Seleccione una opción:</label>
+                        <select id="inputRecibirlo" class="form-control">
+                            <option value="vacio" selected></option>
+                            <option value="olap">Lo antes posible</option>
+                            <option value="ofyh">Seleccionar fecha/hora</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6" id="fyh">
+                        <label class="col-form-label col-sm-6">Fecha y Hora:</label>
+                        <input type="datetime-local" class="form-control col-sm">
+                    </div>
+                </div>
                 <hr>
                 <button type="submit" id="btnRealizarPedido" class="btn btn-primary">Realizar Pedido</button>
             </form>
         </div>
     </div>
 </body>
-
 </html>
