@@ -8,3 +8,4 @@ $('#imageImport').bind('change', function() {
         this.value = "";
     }
 });
+
