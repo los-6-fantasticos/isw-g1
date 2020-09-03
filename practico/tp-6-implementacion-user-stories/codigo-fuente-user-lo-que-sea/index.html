@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Pedir lo que sea!</title>
+     <title>Pedir lo que sea!</title>
 </head>
 
 <body>
@@ -105,6 +105,27 @@
 
             </div>
         </form>
+	<form class="bg-light p-2">
+            <h3 class="display-6 text-center">Cuando desea recibirlo?</h3>
+              <div class="form-group row ">
+                <div class="col-sm-6">
+                    <label class="col-form-label col-sm-6 ">Seleccione una opción:</label>
+                   <select id="inputRecibirlo" class="form-control">
+			<option value="vacio" selected></option>
+			<option value="olap">Lo antes posible</option>
+                        <option value="ofyh">Seleccionar fecha/hora</option>
+                    </select>
+                  /div>
+                <div class="col-sm-6" style="display:none" id="fyh">
+                    <label class="col-form-label col-sm-6  ">Fecha y Hora:</label>
+                    <input type="datetime-local" class="form-control col-sm">
+                </div>
+            </div>
+            <div class="form-group row ">
+                <div class="col-sm-8">
+                </div>
+            </div>
+        </form>
         <button type="submit" id="btnRealizarPedido" class="btn btn-primary">Realizar Pedido</button>
         </form>
     </div>
@@ -120,5 +141,4 @@
         crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
-
 </html>
