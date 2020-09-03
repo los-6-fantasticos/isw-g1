@@ -8,4 +8,17 @@ $('#imageImport').bind('change', function() {
         this.value = "";
     }
 });
+  
+$(document).ready(function(){
+    $("#inputRecibirlo").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue == "ofyh"){
+                $("#fyh").show();
+            } else{
+                $("#fyh").hide();
+            }
+        });
+    }).change();
+});
 
