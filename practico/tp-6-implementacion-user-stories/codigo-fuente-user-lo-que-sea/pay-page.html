@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Pedir lo que sea!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="assets/images/logo.jpg" alt="" width="72" height="72">
+            <h2>Pagar</h2>
+            <p class="lead">A continuacion ingrese sus datos de tarjeta de credito para completar el pago
+            </p>
+        </div>
+        <div class="row">
+
+            <div class="col align-self-center">
+
+                <form class="needs-validation" id="needs-validation" novalidate>
+                    <h4 class="mb-3">Payment</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Nombre</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required data-value-missing="El nombre es requerido">
+                            <small class="text-muted">Nombre completo como se ven la tarjeta</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">Numero de tarjeta de credito</label>
+                            <input type="number" class="form-control" id="cc-number" placeholder="" required pattern="[0-9]{16}" data-value-missing="El codigo de tarjeta de credito es requerido" data-pattern-mismatch="El codigo de tarjeta de credito incorrecto">
+                            <small class="text-muted">Numero de tarjeta sin guiones ni espacios</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration">Expiracion</label>
+                            <input type="number" max="9999" class="form-control" id="cc-expiration" placeholder="" required pattern="[0-9]{4}" data-value-missing="La fecha de expiracion es requerida" data-pattern-mismatch="La fecha es incorrecta">
+                            <small class="text-muted">Fecha de expiracion con dos digitos para el mes y dos para el año. Sin barras ni guiones</small>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-cvv">CVV</label>
+                            <input type="number" max="999" class="form-control" id="cc-cvv" placeholder="" required pattern="[0-9]{3}" data-value-missing="El codigo de seguridad es requerido" data-pattern-mismatch="El codigo de seguridades incorrecto">
+                            <small class="text-muted">Codigo de seguridad que se encuentra al dorso de la tarjeta</small>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Completar el pago</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="js/pay-page-validation.js"></script>
+</body>
+</html>
