@@ -50,65 +50,60 @@
                 </div>
 
                 <hr>
-                <h3 class="display-6 text-center">Direccion de compra</h3>
-                <div class="form-group row p-2">
-                    <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6 ">Calle:</label>
-                        <input type="text" class="form-control col-sm-12" placeholder="Avenida siempre viva calle falsa">
-                    </div>
-                    <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6">Numero:</label>
-                        <input type="number" class="form-control col-sm-6" placeholder="123">
-                    </div>
-
-                    <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6 ">Ciudad:</label>
-                        <select id="inputPlaceCity" class="form-control">
-                            <option value="vacio" selected>------</option>
-                        </select>
-
-                    </div>
-                    <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6  ">Referencia opcional:</label>
-                        <input type="text" class="form-control col-sm"
-                        placeholder="Ingrese referencia opcional si lo desea">
-                    </div>
-                </div>
-
-                <hr>
                 <h3 class="display-6 text-center">Direccion de Envio</h3>
                 <div class="form-group row p-2">
                     <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6 ">Calle:</label>
-                        <input type="text" class="form-control col-sm-12" placeholder="Avenida siempre viva calle falsa">
+                        <label class="col-form-label">Calle:</label>
+                        <input id="fromStreet" type="text" class="form-control" placeholder="Avenida siempre viva calle falsa">
                     </div>
                     <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6 ">Numero:</label>
-                        <input type="number" class="form-control col-sm-6" placeholder="123">
+                        <label class="col-form-label">Numero:</label>
+                        <input id="fromNumber" type="number" class="form-control" placeholder="123">
                     </div>
                     <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6 ">Ciudad:</label>
-                        <select id="inputCity" class="form-control">
-                            <option value="vacio" selected>------</option>
+                        <label class="col-form-label">Ciudad:</label>
+                        <select id="fromCity" class="form-control">
                         </select>
-
                     </div>
                     <div class="col-sm-6">
-                        <label class="col-form-label col-sm-6  ">Referencia opcional:</label>
-                        <input type="text" class="form-control col-sm"
+                        <label class="col-form-label">Referencia opcional:</label>
+                        <input type="text" class="form-control"
                         placeholder="Ingrese referencia opcional si lo desea">
                     </div>
                 </div>
 
-                <div id="map"></div>
+                <div id="fromMap" class="map"></div>
                 <hr>
 
+                <h3 class="display-6 text-center">Direccion de Compra</h3>
+                <div class="form-group row p-2">
+                    <div class="col-sm-6">
+                        <label class="col-form-label">Calle:</label>
+                        <input type="text" class="form-control" placeholder="Avenida siempre viva calle falsa">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-form-label">Numero:</label>
+                        <input type="number" class="form-control" placeholder="123">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-form-label">Ciudad:</label>
+                        <select id="inputPlaceCity" class="form-control">
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="col-form-label">Referencia opcional:</label>
+                        <input type="text" class="form-control"
+                        placeholder="Ingrese referencia opcional si lo desea">
+                    </div>
+                </div>
+
+                <hr>
+                
                 <h3 class="display-6 text-center">Cuando desea recibirlo?</h3>
                 <div class="form-group row p-2">
                     <div class="col-sm-6">
                         <label class="col-form-label">Seleccione una opción:</label>
                         <select id="inputRecibirlo" class="form-control">
-                            <option value="vacio" selected></option>
                             <option value="olap">Lo antes posible</option>
                             <option value="ofyh">Seleccionar fecha/hora</option>
                         </select>
