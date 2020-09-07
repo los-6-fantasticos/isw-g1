@@ -5,8 +5,9 @@ $(function() {
         console.log(data.departamentos);
         $.each(data.departamentos, function (i, depto) {
             console.log(depto.id, i);
-            $("#inputCity").append($('<option>', {value: i, text: depto.nombre}));
+            $("#fromCity").append($('<option>', {value: depto.nombre, text: depto.nombre}));
             $("#inputPlaceCity").append($('<option>', {value: i, text: depto.nombre}));
         });
     });
+    $("#fromCity").val("Capital");
 });
