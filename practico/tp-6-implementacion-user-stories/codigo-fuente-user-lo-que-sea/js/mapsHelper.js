@@ -7,15 +7,14 @@ script.defer = true;
 // Attach your callback function to the `window` object
 window.initMap = function() {
     // JS API is loaded and available
-    let cba = {lat: -31.4091212, lng: -64.1913447};
-    let infowindow = new google.maps.InfoWindow();
-    let geocoder = new google.maps.Geocoder();
+    const cba = {lat: -31.4091212, lng: -64.1913447},
+          infowindow = new google.maps.InfoWindow(),
+          geocoder = new google.maps.Geocoder(),
+          map = new google.maps.Map(document.getElementById("fromMap"), {
+              center: cba,
+              zoom: 13
+          });
     let marker;
-    
-    map = new google.maps.Map(document.getElementById("fromMap"), {
-        center: cba,
-        zoom: 13
-    });
     map.addListener("click", event => {
         marker.setMap(null);
         marker = addMarker(geocoder, map, infowindow, event.latLng);
@@ -41,7 +40,7 @@ function addMarker(geocoder, map, infowindow, location) {
         animation: google.maps.Animation.DROP,
     });
     marker.addListener("dragend", event => {
-        var position = marker.getPosition();
+        let position = marker.getPosition();
         console.log(position.toString());
         geocodeLatLng(geocoder, map, infowindow, position, marker);
     });
@@ -80,8 +79,4 @@ function setToInputs(addressComponents){
     $("#fromStreet").val(street);
     $("#fromNumber").val(number);
     $('#fromCity').val(city);
-/*    $("#fromCity option").filter(function() {
-        console.log($(this).text());
-        return $(this).text() == city;
-    }).prop('selected', true);*/
 }
