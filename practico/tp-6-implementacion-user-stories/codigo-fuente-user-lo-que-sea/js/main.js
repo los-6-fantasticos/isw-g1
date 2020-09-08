@@ -11,32 +11,45 @@ $('#imageImport').bind('change', function() {
     }
     $(this).next('.custom-file-label').html(this.value);
 });
-
-$(function() {
-    $('#inputRecibirlo').on('change', function() {
-        $(this).find("option:selected").each(function(){
-            let optionValue = $(this).attr("value");
-            console.log(optionValue);
-            if(optionValue == "ofyh"){
-                $("#fyh").show();
-            } else{
-                $("#fyh").hide();
-            }
-        });
-    });
-    $('#input-payment').on('change', function() {
-        $(this).find("option:selected").each(function(){
-            let optionValue = $(this).attr("value");
-            console.log(optionValue);
-            if(optionValue == "cash"){
-                $("#cash").show("");                
-                $("#cashInput").prop("required", true);
-                $("#data-form").attr('action', './done.html');
-            } else{
-				$("#data-form").attr('action', './pay-page.html');
-                $("#cashInput").prop("required", false);
-                $("#cash").hide();
-            }
-        });
-    });
+$('#inputRecibirlo').on('change', function() {
+    if($('#inputRecibirlo').val() == "ofyh"){
+        $("#dateTimeDeliver").prop("required", true);
+        $("#fyh").show();
+    } else{
+        $("#dateTimeDeliver").prop("required", false);
+        $("#fyh").hide();
+    }
 });
+$('#inputPayment').on('change', function() {
+    if($('#inputPayment').val() == "cash"){
+        $("#cash").show("");                
+        $("#cashInput").prop("required", true);
+        $("#dataForm").attr('action', './done.html');
+    } else{
+        $("#dataForm").attr('action', './pay-page.html');
+        $("#cashInput").prop("required", false);
+        $("#cash").hide();
+    }
+});
+
+$("#dataForm").submit(function event(){
+    localStorage.setItem("valRequest", $("#request").val());
+    localStorage.setItem("valImage", $("#imageImport").val());
+    localStorage.setItem("valFrom", $("#fromStreet").val() + " " + $("#fromNumber").val() + ", " + $("#fromCity").val());
+    localStorage.setItem("valFromReference", $("#fromReference").val());
+    localStorage.setItem("valTo", $("#toStreet").val() + " " + $("#toNumber").val() + ", " + $("#toCity").val());
+    localStorage.setItem("valToReference", $("#toReference").val());
+    if($('#inputRecibirlo').val() == "ofyh"){
+        localStorage.setItem("valDeliver", "Fecha y Hora:" + $("#dateTimeDeliver").val());
+    }else{
+        localStorage.setItem("valDeliver", "Lo antes posible");
+    }
+    if($('#inputPayment').val() == "cash"){
+        localStorage.setItem("valPayment", "Pago con efectivo: $" + $("#cashInput").val());
+    }else{
+        localStorage.setItem("valPayment", "Pago con Tarjeta");
+    }
+
+
+});
+
