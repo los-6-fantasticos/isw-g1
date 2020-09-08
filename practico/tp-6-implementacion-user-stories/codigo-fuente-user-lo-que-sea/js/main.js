@@ -27,10 +27,10 @@ $(function() {
             console.log(optionValue);
             if(optionValue == "cash"){
                 $("#cash").show("");
-                $("#data-form").attr('action', '/pay-page.html');
+                $("#data-form").attr('action', './done.html');
             } else{
                 $("#cash").hide();
-                $("#data-form").attr('action', '/done.html');
+				$("#data-form").attr('action', './pay-page.html');
             }
         });
     });
