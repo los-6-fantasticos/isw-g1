@@ -16,7 +16,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
                 integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
                 crossorigin="anonymous"></script>
-        <script src="./js/main.js"></script>
+        <script defer src="./js/main.js"></script>
         <script src="./js/locationPopulator.js"></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script src="./js/config.js"></script>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="col-sm-6" id="fyh">
                             <label class="col-form-label col-sm-6">Fecha y Hora:</label>
-                            <input type="datetime-local" class="form-control col-sm" min= "09/08/2020 18:00">
+                            <input type="datetime-local" class="form-control col-sm" min="2020-09-09T18:00:00.00">
                         </div>
                     </div>
 
@@ -125,7 +125,7 @@
                         </div>
                         <div class="col-sm-6" id="cash">
                             <label class="col-form-label col-sm-6">Monto que va a pagar(*)</label>
-                            <input type="number" class="form-control col-sm" min="1" required>
+                            <input type="number" class="form-control col-sm" min="1" id="cashInput" required>
                         </div>
                     </div>
 
