@@ -27,12 +27,12 @@
     <body class="bg-light">
         <div class="container">
             <div class="m-3">
-                <form class="p-2 card" id="data-form" action="/done.html">
+                <form class="p-2 card" id="data-form" action="./done.html">
                     <h3 class="display-6 text-center">Realiza tu pedido</h3>
                     <div class="col align-self-center">
                         <div class="form-group">
-                            <label class="col-form-label col-sm-6 text-left">Busca tu producto</label>
-                            <textarea class="form-control" id="request" rows="3" placeholder="¿Que necesitas?" required></textarea>
+                            <label class="col-form-label col-sm-6 text-left">Ingresa tu producto(*)</label>
+                            <textarea class="form-control" id="request" rows="3" placeholder="¿Qué necesitas?" required></textarea>
                             <small id="requestHelp" class="form-text text-muted" >Aca va todo lo que queres pedir.</small>
 
                             <br>
@@ -50,18 +50,18 @@
                     </div>
 
                     <hr>
-                    <h3 class="display-6 text-center">Direccion de Envio</h3>
+                    <h3 class="display-6 text-center">Dirección de Envio</h3>
                     <div class="form-group row p-2">
                         <div class="col-sm-6">
-                            <label class="col-form-label">Calle:</label>
+                            <label class="col-form-label">Calle:(*)</label>
                             <input id="fromStreet" type="text" class="form-control" placeholder="Avenida siempre viva calle falsa" required>
                         </div>
                         <div class="col-sm-6">
-                            <label class="col-form-label">Numero:</label>
+                            <label class="col-form-label">Número:(*)</label>
                             <input id="fromNumber" type="number" class="form-control" placeholder="123" required>
                         </div>
                         <div class="col-sm-6">
-                            <label class="col-form-label">Ciudad:</label>
+                            <label class="col-form-label">Ciudad:(*)</label>
                             <select id="fromCity" class="form-control" required>
                             </select>
                         </div>
@@ -75,18 +75,18 @@
                     <div id="fromMap" class="map"></div>
                     <hr>
 
-                    <h3 class="display-6 text-center">Direccion de Compra</h3>
+                    <h3 class="display-6 text-center">Dirección de Compra</h3>
                     <div class="form-group row p-2">
                         <div class="col-sm-6">
-                            <label class="col-form-label">Calle:</label>
+                            <label class="col-form-label">Calle:(*)</label>
                             <input type="text" class="form-control" placeholder="Avenida siempre viva calle falsa" required>
                         </div>
                         <div class="col-sm-6">
-                            <label class="col-form-label">Numero:</label>
+                            <label class="col-form-label">Número:(*)</label>
                             <input type="number" class="form-control" placeholder="123" required>
                         </div>
                         <div class="col-sm-6">
-                            <label class="col-form-label">Ciudad:</label>
+                            <label class="col-form-label">Ciudad:(*)</label>
                             <select id="inputPlaceCity" class="form-control" required>
                             </select>
                         </div>
@@ -99,10 +99,10 @@
 
                     <hr>
 
-                    <h3 class="display-6 text-center">Cuando desea recibirlo?</h3>
+                    <h3 class="display-6 text-center">¿Cuándo desea recibirlo?</h3>
                     <div class="form-group row p-2">
                         <div class="col-sm-6">
-                            <label class="col-form-label">Seleccione una opción:</label>
+                            <label class="col-form-label">Seleccione una opción:(*)</label>
                             <select id="inputRecibirlo" class="form-control" required>
                                 <option value="olap">Lo antes posible</option>
                                 <option value="ofyh">Seleccionar fecha/hora</option>
@@ -110,21 +110,21 @@
                         </div>
                         <div class="col-sm-6" id="fyh">
                             <label class="col-form-label col-sm-6">Fecha y Hora:</label>
-                            <input type="datetime-local" class="form-control col-sm">
+                            <input type="datetime-local" class="form-control col-sm" min= "09/08/2020 18:00">
                         </div>
                     </div>
 
-                    <h3 class="display-6 text-center">Elija metodo de pago</h3>
+                    <h3 class="display-6 text-center">Seleccione un método de pago(*)</h3>
                     <div class="form-group row p-2">
                         <div class="col-sm-6">
                             <label class="col-form-label">Seleccione una opción:</label>
                             <select id="input-payment" class="form-control" required>
                                 <option value="cash">Efectivo</option>
-                                <option value="card">Tarjeta VISA</option>
+                                <option value="card">Tarjeta de crédito</option>
                             </select>
                         </div>
                         <div class="col-sm-6" id="cash">
-                            <label class="col-form-label col-sm-6">Monto que va a pagar</label>
+                            <label class="col-form-label col-sm-6">Monto que va a pagar(*)</label>
                             <input type="number" class="form-control col-sm" min="1" required>
                         </div>
                     </div>
