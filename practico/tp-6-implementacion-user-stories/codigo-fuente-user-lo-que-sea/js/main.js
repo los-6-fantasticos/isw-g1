@@ -1,6 +1,7 @@
 $(function(){
+    let tzoffset = (new Date()).getTimezoneOffset() * 60000;
+    let isoStr = new Date(Date.now() - tzoffset).toISOString();
     localStorage.clear();
-    let isoStr = new Date().toISOString();
     $("#dateTimeDeliver").attr("min", isoStr.substring(0,isoStr.length-8))
 });
 
