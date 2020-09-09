@@ -5,9 +5,9 @@ $(function() {
         $.each(data.departamentos, function (i, depto) {
             console.log(depto.id, i);
             $("#fromCity").append($('<option>', {value: depto.nombre, text: depto.nombre}));
-            $("#toCity").append($('<option>', {value: i, text: depto.nombre}));
+            $("#toCity").append($('<option>', {value: depto.nombre, text: depto.nombre}));
         });
+        $("#fromCity").val("Capital");
+        $("#toCity").val("Capital");
     });
-    $("#fromCity").val("Capital");
-    $("#toCity").val("Capital");
 });

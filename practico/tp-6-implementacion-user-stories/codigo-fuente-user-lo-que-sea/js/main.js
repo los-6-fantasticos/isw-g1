@@ -1,4 +1,5 @@
 $(function(){
+    localStorage.clear();
     let isoStr = new Date().toISOString();
     $("#dateTimeDeliver").attr("min", isoStr.substring(0,isoStr.length-8))
 });
@@ -40,14 +41,30 @@ $('#inputPayment').on('change', function() {
 });
 
 $("#dataForm").submit(function event(){
+    let date,
+        datestring;
     localStorage.setItem("valRequest", $("#request").val());
-    localStorage.setItem("valImage", $("#imageImport").val());
+    if($("#imageImport").val()==""){
+        localStorage.setItem("valImage", "No");
+    }else{
+        localStorage.setItem("valImage", "Si");
+    }
     localStorage.setItem("valFrom", $("#fromStreet").val() + " " + $("#fromNumber").val() + ", " + $("#fromCity").val());
-    localStorage.setItem("valFromReference", $("#fromReference").val());
+    if($("#fromReference").val()!==""){
+        localStorage.setItem("valFromReference", "<b>Referencia:</b> " + $("#fromReference").val() + "<br>");
+    }else{
+        localStorage.setItem("valFromReference","")
+    }
     localStorage.setItem("valTo", $("#toStreet").val() + " " + $("#toNumber").val() + ", " + $("#toCity").val());
-    localStorage.setItem("valToReference", $("#toReference").val());
+    if($("#toReference").val()!=""){
+        localStorage.setItem("valToReference", "<b>Referencia:</b> " + $("#toReference").val() + "<br>");
+    }else{
+        localStorage.setItem("valToReference","")
+    }
     if($('#inputRecibirlo').val() == "ofyh"){
-        localStorage.setItem("valDeliver", $("#dateTimeDeliver").val());
+        date = new Date($("#dateTimeDeliver").val());
+        datestring = ("0" + date.getDate()).slice(-2) + "-" + ("0" + (date.getMonth()+1)).slice(-2) + "-" + date.getFullYear() + " " + ("0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2);
+        localStorage.setItem("valDeliver", datestring);
     }else{
         localStorage.setItem("valDeliver", "Lo antes posible");
     }
