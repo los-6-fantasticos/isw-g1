@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                crossorigin="anonymous"></script>
+        <script src="./js/locationPopulator.js"></script>
+        <script defer src="./js/main.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="./js/config.js"></script>
+        <script src="./js/mapsHelper.js"></script>
+        <title>Pedir lo que sea!</title>
+    </head>
+
+    <body class="bg-light">
+        <div class="container">
+            <div class="m-3">
+                <form class="p-2 card" id="dataForm" action="./done.html">
+                    <h3 class="display-6 text-center">Realiza tu pedido</h3>
+                    <div class="col align-self-center">
+                        <div class="form-group">
+                            <label class="col-form-label col-sm-6 text-left">Ingresa tu producto(*)</label>
+                            <textarea class="form-control" id="request" rows="3" placeholder="¿Qué necesitas?" required></textarea>
+                            <small id="requestHelp" class="form-text text-muted" >Aca va todo lo que queres pedir.</small>
+
+                            <br>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="imageImportAddon">Imagen</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="imageImport"
+                                           aria-describedby="imageImportAddon" accept="image/jpg,image/jpeg">
+                                    <label class="custom-file-label" for="imageImport" data-browse="Buscar">Adjuntar Imagen</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <h3 class="display-6 text-center">Dirección del Local</h3>
+                    <div class="form-group row p-2">
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Calle:(*)</label>
+                            <input id="fromStreet" type="text" class="form-control" placeholder="Avenida siempre viva calle falsa" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Número:(*)</label>
+                            <input id="fromNumber" type="number" class="form-control" placeholder="123" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Ciudad:(*)</label>
+                            <select id="fromCity" class="form-control" required>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Referencia opcional:</label>
+                            <input id="fromReference" type="text" class="form-control"
+                                   placeholder="Ingrese referencia opcional si lo desea">
+                        </div>
+                    </div>
+
+                    <div id="fromMap" class="map"></div>
+                    <hr>
+
+                    <h3 class="display-6 text-center">Dirección de Envio</h3>
+                    <div class="form-group row p-2">
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Calle:(*)</label>
+                            <input id="toStreet" type="text" class="form-control" placeholder="Avenida siempre viva calle falsa" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Número:(*)</label>
+                            <input id="toNumber" type="number" class="form-control" placeholder="123" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Ciudad:(*)</label>
+                            <select id="toCity" class="form-control" required>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Referencia opcional:</label>
+                            <input id="toReference" type="text" class="form-control"
+                                   placeholder="Ingrese referencia opcional si lo desea">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h3 class="display-6 text-center">¿Cuándo desea recibirlo?</h3>
+                    <div class="form-group row p-2">
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Seleccione una opción:(*)</label>
+                            <select id="inputRecibirlo" class="form-control" required>
+                                <option value="olap">Lo antes posible</option>
+                                <option value="ofyh">Seleccionar fecha/hora</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6" id="fyh">
+                            <label class="col-form-label col-sm-6">Fecha y Hora:</label>
+                            <input id="dateTimeDeliver" type="datetime-local" class="form-control col-sm" min="2020-09-09T18:00:00.00">
+                        </div>
+                    </div>
+
+                    <h3 class="display-6 text-center">Seleccione un método de pago</h3>
+                    <div class="form-group row p-2">
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Seleccione una opción:(*)</label>
+                            <select id="inputPayment" class="form-control" required>
+                                <option value="cash">Efectivo</option>
+                                <option value="card">Tarjeta de crédito</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6" id="cash">
+                            <label class="col-form-label">Monto que va a pagar(*)</label>
+                            <input type="number" class="form-control col-sm" min="1" id="cashInput" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">El envio tiene un costo de $70</label>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <button type="submit" id="btnRealizarPedido" class="btn btn-primary">Realizar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
