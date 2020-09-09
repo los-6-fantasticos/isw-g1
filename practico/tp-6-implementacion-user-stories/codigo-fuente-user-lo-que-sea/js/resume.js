@@ -5,6 +5,6 @@ document.getElementById("data").innerHTML=`
 <b>Referencia:</b> ${localStorage.getItem("valFromReference")}<br>
 <b>Lugar de envio:</b> ${localStorage.getItem("valTo")}<br>
 <b>Referencia:</b> ${localStorage.getItem("valToReference")}<br>
-<b>Tipo de envio:</b> ${localStorage.getItem("valDeliver")}<br>
+<b>Se envia:</b> ${localStorage.getItem("valDeliver")}<br>
 <b>Pago:</b> ${localStorage.getItem("valPayment")}<br>
 `

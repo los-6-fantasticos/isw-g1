@@ -1,3 +1,8 @@
+$(function(){
+    let isoStr = new Date().toISOString();
+    $("#dateTimeDeliver").attr("min", isoStr.substring(0,isoStr.length-8))
+});
+
 $('#imageImport').bind('change', function() {
     const max = 5 * 1024 * 1024;                   // Defined by US 5MB convert to B
     let actualSize = this.files[0].size;
@@ -11,6 +16,7 @@ $('#imageImport').bind('change', function() {
     }
     $(this).next('.custom-file-label').html(this.value);
 });
+
 $('#inputRecibirlo').on('change', function() {
     if($('#inputRecibirlo').val() == "ofyh"){
         $("#dateTimeDeliver").prop("required", true);
@@ -20,6 +26,7 @@ $('#inputRecibirlo').on('change', function() {
         $("#fyh").hide();
     }
 });
+
 $('#inputPayment').on('change', function() {
     if($('#inputPayment').val() == "cash"){
         $("#cash").show("");                
@@ -40,14 +47,14 @@ $("#dataForm").submit(function event(){
     localStorage.setItem("valTo", $("#toStreet").val() + " " + $("#toNumber").val() + ", " + $("#toCity").val());
     localStorage.setItem("valToReference", $("#toReference").val());
     if($('#inputRecibirlo').val() == "ofyh"){
-        localStorage.setItem("valDeliver", "Fecha y Hora:" + $("#dateTimeDeliver").val());
+        localStorage.setItem("valDeliver", $("#dateTimeDeliver").val());
     }else{
         localStorage.setItem("valDeliver", "Lo antes posible");
     }
     if($('#inputPayment').val() == "cash"){
-        localStorage.setItem("valPayment", "Pago con efectivo: $" + $("#cashInput").val());
+        localStorage.setItem("valPayment", "efectivo: $" + $("#cashInput").val());
     }else{
-        localStorage.setItem("valPayment", "Pago con Tarjeta");
+        localStorage.setItem("valPayment", "Tarjeta");
     }
 
 
