@@ -1,24 +1,33 @@
-function checkCardNumber(number) {
-    var sumTable = [
-        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-        [0, 2, 4, 6, 8, 1, 3, 5, 7, 9]
-    ],
-        sum = 0,
-        flip = 0,
-        i;
+// Takes a credit card string value and returns true on valid number
+function valid_credit_card(value) {
+    let nCheck = 0,
+        bEven = false,
+        cDigit,
+        nDigit,
+        n;
+    // Accept only digits, dashes or spaces
+    if (/[^0-9-\s]+/.test(value)) return false;
 
-    for (i = number.length - 1; i >= 0; i--) {
-        sum += sumTable[flip++ & 0x1][parseInt(number.charAt(i), 10)];
+    // The Luhn Algorithm. It's so pretty.
+    value = value.replace(/\D/g, "");
+
+    for (n = value.length - 1; n >= 0; n--) {
+        cDigit = value.charAt(n);
+        nDigit = parseInt(cDigit, 10);
+
+        if (bEven && (nDigit *= 2) > 9) nDigit -= 9;
+
+        nCheck += nDigit;
+        bEven = !bEven;
     }
 
-    return sum % 10 === 0;
+    return (nCheck % 10) == 0;
 }
-
 
 function is_luhn_valid(creditCardNumber) {
     let cardNumber = creditCardNumber.value;
     const msg = "No es un numero VISA valido.";
-    if (!checkCardNumber(cardNumber) === true) {
+    if (!valid_credit_card(cardNumber) === true) {
         creditCardNumber.setCustomValidity(msg);
         return msg;
     }else{
