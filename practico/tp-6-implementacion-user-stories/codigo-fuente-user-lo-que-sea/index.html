@@ -16,8 +16,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
                 integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
                 crossorigin="anonymous"></script>
-        <script defer src="./js/main.js"></script>
         <script src="./js/locationPopulator.js"></script>
+        <script defer src="./js/main.js"></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script src="./js/config.js"></script>
         <script src="./js/mapsHelper.js"></script>
@@ -27,7 +27,7 @@
     <body class="bg-light">
         <div class="container">
             <div class="m-3">
-                <form class="p-2 card" id="data-form" action="./done.html">
+                <form class="p-2 card" id="dataForm" action="./done.html">
                     <h3 class="display-6 text-center">Realiza tu pedido</h3>
                     <div class="col align-self-center">
                         <div class="form-group">
@@ -50,7 +50,7 @@
                     </div>
 
                     <hr>
-                    <h3 class="display-6 text-center">Dirección de Envio</h3>
+                    <h3 class="display-6 text-center">Dirección del Local</h3>
                     <div class="form-group row p-2">
                         <div class="col-sm-6">
                             <label class="col-form-label">Calle:(*)</label>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label class="col-form-label">Referencia opcional:</label>
-                            <input type="text" class="form-control"
+                            <input id="fromReference" type="text" class="form-control"
                                    placeholder="Ingrese referencia opcional si lo desea">
                         </div>
                     </div>
@@ -75,24 +75,24 @@
                     <div id="fromMap" class="map"></div>
                     <hr>
 
-                    <h3 class="display-6 text-center">Dirección de Compra</h3>
+                    <h3 class="display-6 text-center">Dirección de Envio</h3>
                     <div class="form-group row p-2">
                         <div class="col-sm-6">
                             <label class="col-form-label">Calle:(*)</label>
-                            <input type="text" class="form-control" placeholder="Avenida siempre viva calle falsa" required>
+                            <input id="toStreet" type="text" class="form-control" placeholder="Avenida siempre viva calle falsa" required>
                         </div>
                         <div class="col-sm-6">
                             <label class="col-form-label">Número:(*)</label>
-                            <input type="number" class="form-control" placeholder="123" required>
+                            <input id="toNumber" type="number" class="form-control" placeholder="123" required>
                         </div>
                         <div class="col-sm-6">
                             <label class="col-form-label">Ciudad:(*)</label>
-                            <select id="inputPlaceCity" class="form-control" required>
+                            <select id="toCity" class="form-control" required>
                             </select>
                         </div>
                         <div class="col-sm-6">
                             <label class="col-form-label">Referencia opcional:</label>
-                            <input type="text" class="form-control"
+                            <input id="toReference" type="text" class="form-control"
                                    placeholder="Ingrese referencia opcional si lo desea">
                         </div>
                     </div>
@@ -110,22 +110,25 @@
                         </div>
                         <div class="col-sm-6" id="fyh">
                             <label class="col-form-label col-sm-6">Fecha y Hora:</label>
-                            <input type="datetime-local" class="form-control col-sm" min="2020-09-09T18:00:00.00">
+                            <input id="dateTimeDeliver" type="datetime-local" class="form-control col-sm" min="2020-09-09T18:00:00.00">
                         </div>
                     </div>
 
-                    <h3 class="display-6 text-center">Seleccione un método de pago(*)</h3>
+                    <h3 class="display-6 text-center">Seleccione un método de pago</h3>
                     <div class="form-group row p-2">
                         <div class="col-sm-6">
-                            <label class="col-form-label">Seleccione una opción:</label>
-                            <select id="input-payment" class="form-control" required>
+                            <label class="col-form-label">Seleccione una opción:(*)</label>
+                            <select id="inputPayment" class="form-control" required>
                                 <option value="cash">Efectivo</option>
                                 <option value="card">Tarjeta de crédito</option>
                             </select>
                         </div>
                         <div class="col-sm-6" id="cash">
-                            <label class="col-form-label col-sm-6">Monto que va a pagar(*)</label>
+                            <label class="col-form-label">Monto que va a pagar(*)</label>
                             <input type="number" class="form-control col-sm" min="1" id="cashInput" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">El envio tiene un costo de $70</label>
                         </div>
                     </div>
 

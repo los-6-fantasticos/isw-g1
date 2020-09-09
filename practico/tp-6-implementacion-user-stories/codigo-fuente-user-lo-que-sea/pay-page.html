@@ -10,48 +10,45 @@
         <script defer src="js/pay-page-validation.js"></script>
         <title>Pedir lo que sea!</title>
     </head>
-    <body>
+    <body class="bg-light">
         <div class="container">
-            <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="assets/images/logo.jpg" alt="" width="72" height="72">
-                <h2>Pagar</h2>
-                <p class="lead">A continuación ingrese sus datos de tarjeta de crédito para completar el pago
-                </p>
-            </div>
-            <div class="row">
+            <div class="m-3">
 
-                <div class="col align-self-center">
-
-                    <form class="needs-validation" id="needs-validation" novalidate action="./done.html">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="cc-name">Nombre y apellido del titular</label>
-                                <input type="text" class="form-control" id="cc-name" placeholder="" required data-value-missing="El nombre es requerido">
-                                <small class="text-muted">Nombre completo como aparece en la tarjeta</small>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="cc-number">Número de tarjeta de credito</label>
-                                <input id="cc-number" class="form-control" type="tel" inputmode="numeric" pattern="^4[0-9]{12}(?:[0-9]{3})?$" autocomplete="cc-number" maxlength="16" data-value-missing="Ingrese un numero de tarjeta de credito" data-pattern-mismatch="Revise que su tarjeta sea VISA">
-                                <small class="text-muted">Número de tarjeta sin guiones ni espacios</small>
-                            </div>
+                <form class="needs-validation p-2 card" id="needs-validation" novalidate action="./done.html">
+                    <div class="py-5 text-center">
+                        <img class="d-block mx-auto mb-4" src="assets/images/logo.jpg" alt="" width="72" height="72">
+                        <h2>Pagar</h2>
+                        <p class="lead">A continuación ingrese sus datos de tarjeta de crédito para completar el pago
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Nombre y apellido del titular</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required data-value-missing="El nombre es requerido">
+                            <small class="text-muted">Nombre completo como aparece en la tarjeta</small>
                         </div>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="cc-expiration">Fecha de expiración</label>
-                                <input type="month" class="form-control" id="cc-expiration" placeholder="" required data-value-missing="La fecha de expiración es requerida" data-pattern-mismatch="La fecha es incorrecta" pattern="[0-9]{4}-[0-9]{2}" min="2020-09">
-                                <small class="text-muted">Fecha de expiración con cuatro dígitos para el año y dos para el mes, separados por un guión.</small>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="cc-cvv">CVV</label>
-                                <input type="tel" maxlength="3" inputmode="numeric" class="form-control" id="cc-cvv" placeholder="" required pattern="[0-9]{3}" data-value-missing="El codigo de seguridad es requerido" data-pattern-mismatch="El codigo de seguridad es incorrecto">
-                                <small class="text-muted">Código de seguridad que se encuentra al dorso de la tarjeta</small>
-                            </div>  
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">Número de tarjeta de credito</label>
+                            <input id="cc-number" class="form-control" type="tel" inputmode="numeric" pattern="^4[0-9]{12}(?:[0-9]{3})?$" autocomplete="cc-number" maxlength="16" data-value-missing="Ingrese un numero de tarjeta de credito" data-pattern-mismatch="Revise que su tarjeta sea VISA">
+                            <small class="text-muted">Número de tarjeta sin guiones ni espacios</small>
                         </div>
-                        <button class="btn btn-primary btn-block" id="complete-pay">Completar el pago</button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration">Fecha de expiración</label>
+                            <input type="month" class="form-control" id="cc-expiration" placeholder="" required data-value-missing="La fecha de expiración es requerida" data-pattern-mismatch="La fecha es incorrecta" pattern="[0-9]{4}-[0-9]{2}" min="2020-09">
+                            <small class="text-muted">Fecha de expiración con cuatro dígitos para el año y dos para el mes, separados por un guión.</small>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-cvv">CVV</label>
+                            <input type="tel" maxlength="3" inputmode="numeric" class="form-control" id="cc-cvv" placeholder="" required pattern="[0-9]{3}" data-value-missing="El codigo de seguridad es requerido" data-pattern-mismatch="El codigo de seguridad es incorrecto">
+                            <small class="text-muted">Código de seguridad que se encuentra al dorso de la tarjeta</small>
+                        </div>  
+                    </div>
+                    <button class="btn btn-primary btn-block" id="complete-pay">Completar el pago</button>
+                    <a class="btn btn-danger btn-block" href="/">Cancelar</a>
+                </form>
             </div>
         </div>
-
     </body>
 </html>
