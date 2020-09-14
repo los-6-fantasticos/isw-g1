@@ -11,12 +11,7 @@
       + documentacion
   + teorico
     + material-teorico
-      + unidad-00
-        + filminas
-        + apuntes
-      + unidad-NN
-        + filminas
-        + apuntes
+      + filminas
     + trabajos-conceptuales
       + tp-1
       + tp-n
@@ -31,7 +26,7 @@
 |                          Link a Google Docs                         | `README.md`                                              |                `https://github.com/los-6-fantasticos/isw-g1/tree/master/practico/tp-<numeroTPPracticoxx>-<nombreTPPractico>`              |             Practico             |
 |                       Enunciados TPs prácticos                      | `ISW_Enunciados TP evaluables 2020 2doCuat.pdf`          |                                      https://github.com/los-6-fantasticos/isw-g1/tree/master/practico                                     |             Practico             |
 |                     Enunciados TPs Conceptuales                     | `ISW_Lineamientos para trabajos teóricos 2020 2 C.pdf`   |                           https://github.com/los-6-fantasticos/isw-g1/tree/master/teorico/trabajos-conceptuales                           |              Teorico             |
-|                           Filmina Unidad N                          | `u<numeroUnidadxx>-filmina-<numeroFilminaxx>.pdf`        |         `https://github.com/los-6-fantasticos/isw-g1/tree/master/teorico/material-teorico/filminas/unidad-<numeroUnidadxx>/filminas`      |              Teorico             |
+|                           Filmina Unidad N                          | `<tituloDeFilmima>.pdf`        |         `https://github.com/los-6-fantasticos/isw-g1/tree/master/teorico/material-teorico/filminas`      |              Teorico             |
 |                        Links Clases Grabadas                        | `links-clases-grabadas.txt`                              |                                      https://github.com/los-6-fantasticos/isw-g1/tree/master/teorico                                      |              Teorico             |
 |                        Trabajos Conceptuales                        | `isw-g1-tp<numeroTPTeoricox>-<nombreTPTeorico>.pdf`      |                 `https://github.com/los-6-fantasticos/isw-g1/tree/master/teorico/trabajos-conceptuales/tp<numeroTPTeoricox>`              |              Teorico             |
 |                     Trabajos prácticos resueltos                    |  `ISW_Guia de Trabajos Practicos Resueltos 2020 2do.pdf` |                                      https://github.com/los-6-fantasticos/isw-g1/tree/master/practico                                     |             Practico             |
@@ -49,8 +44,7 @@
 |:--------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------:|
 | `<numeroTPPracticoxx>` | Número que identifica el trabajo práctico. Formato numérico entero de 1 cifra.                                                                    |
 | `<nombreTPPractico>`   | Nombre que identifica el tema del trabajo práctico.                                                                                               |
-| `<numeroFilminaxx>`    | Número que identifica la filmina  en estudio.  Formato numérico entero  de 2 cifras. En caso de ser una la misma se completará con un 0 adelante. |
-| `<numeroUnidadxx>`     | Número que identifica la unidad en estudio.  Formato numérico entero  de 2 cifras. En caso de ser una la misma se completará con un 0 adelante.   |
+| `<tituloDeFilmina>`    | Nombre que identifica la filmina  en estudio dado por los profesores de la cátedra. |
 | `<numeroTPTeoricox>`   | Número que identifica el trabajo conceptual teórico. Formato numérico entero de 1 cifra.                                                          |
 | `<nombreTPTeorico>`    | Nombre que identifica el tema del trabajo conceptual teórico.                                                                                     |
 | `<nombreProyecto>`     | Nombre que identifica a cada proyecto implementado.                                                                                               |
