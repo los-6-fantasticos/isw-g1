@@ -3,10 +3,10 @@
 
 + Isw-g1
   + practico
-    + tp-1-agile
+    + tp-01-agile
       + codigo-fuente
       + documentacion
-    + tp-n-nombre
+    + tp-nn-nombre
       + codigo-fuente
       + documentacion
   + teorico
@@ -22,7 +22,7 @@
 | Listado de Ítems de Configuración  Nombre del Ítem de Configuración |                    Regla de Nombrado                   |                                                              Ubicación Física                                                             | Tipo de Ítem [Práctico -Teórico] |
 |:-------------------------------------------------------------------:|:------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------:|
 |                            Código Fuente                            | `<nombreArchivo>.<extension>`                            | `https://github.com/los-6-fantasticos/isw-g1/tree/master/practico/tp-<numeroTPPracticox>-<nombreTPPractico>/codigo-fuente-<nombreProyecto>` |             Practico             |
-|                            Documentación                            | `isw-g1-tp<numeroTPPracticox>-<nombreTPPractico>.pdf`    |          `https://github.com/los-6-fantasticos/isw-g1/tree/master/practico/tp-<numeroTPPracticox>-<nombreTPPractico>/documentacion`       |             Practico             |
+|                            Documentación                            | `isw-g1-tp-<numeroTPPracticox>-<nombreTPPractico>.pdf`    |          `https://github.com/los-6-fantasticos/isw-g1/tree/master/practico/tp-<numeroTPPracticox>-<nombreTPPractico>/documentacion`       |             Practico             |
 |                          Link a Google Docs                         | `README.md`                                              |                `https://github.com/los-6-fantasticos/isw-g1/tree/master/practico/tp-<numeroTPPracticoxx>-<nombreTPPractico>`              |             Practico             |
 |                       Enunciados TPs prácticos                      | `ISW_Enunciados TP evaluables 2020 2doCuat.pdf`          |                                      https://github.com/los-6-fantasticos/isw-g1/tree/master/practico                                     |             Practico             |
 |                     Enunciados TPs Conceptuales                     | `ISW_Lineamientos para trabajos teóricos 2020 2 C.pdf`   |                           https://github.com/los-6-fantasticos/isw-g1/tree/master/teorico/trabajos-conceptuales                           |              Teorico             |
@@ -42,7 +42,8 @@
 
 |        Sigla         |                                                                    Significado                                                                    |
 |:--------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `<numeroTPPracticoxx>` | Número que identifica el trabajo práctico. Formato numérico entero de 1 cifra.                                                                    |
+| `<numeroTPPracticox>`  | Número que identifica el trabajo práctico. Formato numérico entero de 1 cifra.                                                                    |
+| `<numeroTPPracticoxx>` | Número que identifica la carpeta contenedora de el trabajo práctico. Formato numérico entero de 2 cifras.                                         |
 | `<nombreTPPractico>`   | Nombre que identifica el tema del trabajo práctico.                                                                                               |
 | `<tituloDeFilmina>`    | Nombre que identifica la filmina  en estudio dado por los profesores de la cátedra. |
 | `<numeroTPTeoricox>`   | Número que identifica el trabajo conceptual teórico. Formato numérico entero de 1 cifra.                                                          |
